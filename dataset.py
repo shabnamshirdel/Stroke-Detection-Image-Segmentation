@@ -1,14 +1,14 @@
-import os
-import cv2
 import numpy as np
 import imutils
+import cv2
+import os
 import random
 from albumentations import CenterCrop, RandomRotate90, GridDistortion, HorizontalFlip, VerticalFlip,Crop,ElasticTransform,RandomBrightnessContrast
 random.seed(7)
 
-augRotate = RandomRotate90(p=1)
-augDist = GridDistortion(p=1.0)
 augFlip = HorizontalFlip(p=1.0)
+augDist = GridDistortion(p=1.0)
+augRotate = RandomRotate90(p=1)
 augFlipV = VerticalFlip(p=1.0)
 augElastic = ElasticTransform(p=1, alpha=120, sigma=120 * 0.05, alpha_affine=120 * 0.03)
 augBright = RandomBrightnessContrast(p=1)
